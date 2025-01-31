@@ -1,0 +1,25 @@
+{
+  "name": "hng-stage-zero",
+  "version": "1.0.0",
+  "description": "hng stage zero",
+  "main": "app.ts",
+  "scripts": {
+    "start": "node dist/app.ts",
+    "local": "nodemon app.ts"
+  },
+  "keywords": [
+    "hng"
+  ],
+  "author": "Joseph Anya",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.9",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "ts-node": "^10.9.2"
+  }
+}
