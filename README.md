@@ -6,9 +6,9 @@ It uses the following dependencies: [Typescript](https://www.npmjs.com/package/t
 
 ### Features
 
-- Returns my registered email address.
+- Returns my personal info.
 - Returns the current datetime in ISO 8601 format.
-- Returns the github URL fo this project's codebase.
+- Returns a radom fact about cats.
 
 ## Setup Instructions
 
@@ -43,16 +43,16 @@ It uses the following dependencies: [Typescript](https://www.npmjs.com/package/t
    Curl:
 
    ```
-   curl http://localhost:3000
+   curl http://localhost:3000/me
    ```
 
-   Or opening ``http://localhost:3000`` on your browser
+   Or opening ``http://localhost:3000/me`` on your browser
 
    ### Deployment
 
 The API is deployed and self-hosted. You can access it at:
 
-[https://13d0-102-89-43-87.ngrok-free.app](https://13d0-102-89-43-87.ngrok-free.app "Go to live deployment")
+[https://e98d3b65b67e.ngrok-free.app/me](https://e98d3b65b67e.ngrok-free.app/me "Go to live deployment")
 
 ### Endpoint
 
@@ -64,9 +64,14 @@ GET /
 
 ```json
    {
-     "email": "josephanya4real@gmail.com",
-     "current_datetime": "2025-01-30T09:30:00Z",
-     "github_url": "https://github.com/josephanya/stage-zero.git"
+     "staus": "success",
+     "user": {
+            "email": "josephanya4real@gmail.com",
+            "name": "Joseph Anya",
+            "stack": "Typescript TypeScript + Node.js + Express + NestJS + MongoDB + PostgreSQL"
+        },
+     "timestamp": "2025-01-30T09:30:00Z",
+     "fact": "Random cat fact"
    }
 ```
 
@@ -74,7 +79,7 @@ GET /
 
 
 ```bash
-   curl https://13d0-102-89-43-87.ngrok-free.app
+   curl https://e98d3b65b67e.ngrok-free.app/me
 ```
 
 ### Backlink

@@ -5,13 +5,40 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.get('/', (req: Request, res: Response)=> {
-    res.status(200).json({
-        email: "josephanya4real@gmail.com",
-        current_datetime: new Date(),
-        github_url: "https://github.com/josephanya/stage-zero"
-    })
+app.get('/me', async (req: Request, res: Response) => {
+    try {
+        const fact = await getFact();
+        res.status(200).json({
+            status: 'Success',
+            user: {
+                email: 'josephanya4real@gmail.com',
+                name: 'Joseph Anya',
+                stack: 'Typescript TypeScript + Node.js + Express + NestJS + MongoDB + PostgreSQL'
+            },
+            timestamp: new Date(),
+            fact
+        })
+    } catch (error) {
+        res.status(404).json({
+            status: 'Failed',
+            message: `An error occured: ${error}`
+        })
+    }
 });
+
+const getFact = async () => {
+    const url = 'https://catfact.ninja/fact';
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+        const result = await response.json();
+        return result.fact;
+    } catch (error) {
+        return 'Catfact API is down';
+    }
+}
 
 const port = 3000;
 
