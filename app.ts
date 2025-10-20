@@ -13,7 +13,7 @@ app.get('/me', async (req: Request, res: Response) => {
             user: {
                 email: 'josephanya4real@gmail.com',
                 name: 'Joseph Anya',
-                stack: 'Typescript TypeScript + Node.js + Express + NestJS + MongoDB + PostgreSQL'
+                stack: 'Node.js/Express'
             },
             timestamp: new Date(),
             fact
