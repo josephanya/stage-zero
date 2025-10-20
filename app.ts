@@ -9,7 +9,7 @@ app.get('/me', async (req: Request, res: Response) => {
     try {
         const fact = await getFact();
         res.status(200).json({
-            status: 'Success',
+            status: 'success',
             user: {
                 email: 'josephanya4real@gmail.com',
                 name: 'Joseph Anya',
@@ -20,7 +20,7 @@ app.get('/me', async (req: Request, res: Response) => {
         })
     } catch (error) {
         res.status(404).json({
-            status: 'Failed',
+            status: 'failed',
             message: `An error occured: ${error}`
         })
     }
