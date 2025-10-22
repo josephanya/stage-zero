@@ -1,4 +1,4 @@
-# Stage-one
+# Stage-Zero
 
 This is a simple public API written in Typescript that returns some information in JSON format.
 
